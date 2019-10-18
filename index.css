@@ -1,0 +1,28 @@
+.cont__principal {
+    border: 1px solid royalblue;
+    margin: 0 auto;
+    width: 500px;
+    height: 550px;
+
+}
+
+.row__secundaria {
+    border: 1px solid royalblue;
+    height: 300px;
+}
+
+
+.card__properties {
+    margin: 0 auto;
+    margin-top: 150px;
+    max-width: 640px;
+}
+
+.lightCloud {
+    background-color: blanchedalmond;
+}
+
+.heavyCloud {
+    background-color: rgb(90, 244, 154);
+}
+

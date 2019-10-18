@@ -12,16 +12,125 @@ function httpGet(theUrl, callback) {
   xmlHttp.send();
 }
 
-function listaCompleta(barcelona) { //aca va el for de lo que quiero que haga 
-  console.log(barcelona)
+
+function temperaturaDias(ciudad) {
+  let arrTemperaturaDias = ciudad["consolidated_weather"]
+
+  for (let i = 0; i < arrTemperaturaDias.length; i++) {
+    let objTemperaturaDia = arrTemperaturaDias[i]
+    console.log(objTemperaturaDia["the_temp"])
+  }
+}
+
+// function para determinar el color del tema (CSS) tema dependiendo de si llueve, hace sol, etc - index: weather_state_name
+
+function tiempo(attr) {
+let estilo = "";
+
+  switch (attr) {
+      case "Light Cloud": //crear una clase para cada uno 
+        estilo = "lightCloud"
+        break;
+
+      case "Heavy Cloud":
+        estilo = "heavyCloud"  
+        break;
+
+      case "Light Rain":
+        estilo = "lightRain";
+        break;
+
+      case "Showers":
+        estilo = "showers";
+        break;
+
+      case "Heavy Rain":
+        estilo = "heavyRain";
+        break;  
+
+      case "Snow":
+        estilo = "snow";
+        break;
+
+      case "Sleet":
+        estilo = "sleet";
+        break;
+
+      case "Hail":
+        estilo = "hail";
+        break;
+
+      case "Thunderstorm":
+        estilo = "thunderstorm";
+        break;
+
+      case "Clear":
+        estilo = "clear";
+        break;
+
+      default:
+        estilo = "default";
+
+  }
+
+  return estilo; 
 }
 
 
-let barcelona; // despues de saber la estructura de la ubicacione de mis objetos lo debo poner de nuevo al lado de barcelona = JSON.parse(texto);
+
+/* 
+function temperaturaActual(ciudad) {
+  let objTemperaturaDia = ciudad["consolidated_weather"][0]
+  console.log("HOY " + objTemperaturaDia["the_temp"])
+} */
+
+function temperaturaActual(ciudad) {
+    let objTemperaturaDia = ciudad["consolidated_weather"][0]
+  
+  // imprime el numero de la temperatura GRANDE
+    let imprimeTemperatura = document.querySelector("#result .temperatura")
+    imprimeTemperatura.innerHTML = Math.round(objTemperaturaDia["the_temp"])
+
+  // muestra el date del dia actual
+    let imprimeDiaActual = document.querySelector("#result .date")
+    imprimeDiaActual.innerHTML = objTemperaturaDia["applicable_date"]
+
+  let claseNueva = tiempo( objTemperaturaDia["weather_state_name"])
+
+  let classTiempoDia = document.querySelector(".bg__color") //tal vez tenga que usar query selector all
+  classTiempoDia.className += " " + claseNueva;
+
+
+  // selecciona la imagen para poner en la CARD dependiendo de la temperatura
+
+    let imagen = ""
+
+    //TODO hacer ifs para definir la imagen
+
+
+
+    let imgTemperatura = document.querySelector("#result img")
+  
+    imgTemperatura.src = imagen
+
+    //imprimir el nombre de la ciudad 
+
+    let imprimeNombreCiudad = document.querySelector(".nombre__ciudad")
+    imprimeNombreCiudad.innerHTML = ciudad["title"]
+
+   
+
+
+}
+
+ // despues de saber la estructura de la ubicacione de mis objetos lo debo poner de nuevo al lado de barcelona = JSON.parse(texto);
 
 function imprimir(texto){ //callback
-  barcelona = JSON.parse(texto);
-  listaCompleta(barcelona)
+  let ciudad = JSON.parse(texto);
+
+  temperaturaActual(ciudad)
+  //temperaturaDias(ciudad)
+
 }
 
 
@@ -33,4 +142,5 @@ httpGet("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/loc
 barcelona["consolidated_weather"][0]["the_temp"]
 23.025
 barcelona["consolidated_weather"][0]["applicable_date"]
-"2019-10-17" */
+"2019-10-17" 
+ciudad["consolidated_weather"][0]["weather_state_name"]*/
