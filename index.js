@@ -103,14 +103,17 @@ function temperaturaActual(ciudad) {
 
   // selecciona la imagen para poner en la CARD dependiendo de la temperatura
 
-    let imagen = ""
+    let imagen = "assets/default.png"
 
     //TODO hacer ifs para definir la imagen
 
-
+    if (objTemperaturaDia["the_temp"] >= 22 && objTemperaturaDia["the_temp"]<= 30) {
+      imagen = "assets/sun.png"
+    } else if (objTemperaturaDia["the_temp"] > 0 && objTemperaturaDia["the_temp"]<= 21) {
+      imagen = "assets/cold.png"
+    }
 
     let imgTemperatura = document.querySelector("#result img")
-  
     imgTemperatura.src = imagen
 
     //imprimir el nombre de la ciudad 
