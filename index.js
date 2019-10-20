@@ -95,11 +95,15 @@ function temperaturaActual(ciudad) {
     let imprimeDiaActual = document.querySelector("#result .date")
     imprimeDiaActual.innerHTML = objTemperaturaDia["applicable_date"]
 
+
+
+  // cambiar el backgrouend principal
   let claseNueva = tiempo( objTemperaturaDia["weather_state_name"])
 
   let classTiempoDia = document.querySelector(".bg__color") //tal vez tenga que usar query selector all
   classTiempoDia.className += " " + claseNueva;
 
+ 
 
   // selecciona la imagen para poner en la CARD dependiendo de la temperatura
 

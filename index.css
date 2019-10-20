@@ -13,21 +13,31 @@
 
 .nombre__ciudad {
     text-align: center;
-    padding-top: 55px;
+   padding-top: 55px; 
     font-size: 100px;
     color: white;
     font-family: Oswald;
-    padding-right: 70px;
+   padding-right: 70px; 
     background-size: 200px; 
-    background-color: #14909E;
-   
-
+    background-color: rgb(90, 90, 91);
 
 }
 
+.row__button {
+    margin: 0 auto;
+    height: 100px;
+    text-align: center;
+}
+
+.buttons__properties {
+   margin: 0 auto;
+   margin-top: 200px;
+}
+
+
 .img__properties {
     padding: 20px !important; 
-   /* width: 100px !important; */
+    width: 150px !important; 
 }
 
 .temperature__properties {
@@ -63,23 +73,23 @@
 }
 
 .snow {
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightRain2.jpg');
+    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/snow.jpg');
 }
 
 .sleet {
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightRain2.jpg');
+    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/sleet.jpg');
 }
 
 .hail {
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightRain2.jpg');
+    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/hail.jpg');
 }
 
 .thunderstorm {
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightRain2.jpg');
+    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/thunderstorm.jpg');
 }
 
 .heavyRain {
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightRain2.jpg');
+    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/heavyRain.jpg');
 }
 
 .lightRain{
@@ -87,24 +97,24 @@
 }
 
 .showers {
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightRain2.jpg');
+    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/showers.jpg');
 }
 
 .lightCloud {
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightRain2.jpg');
+    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightCloud.jpg');
 }
 
 .heavyCloud {
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightRain2.jpg');
+    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/heavyCloud.jpg');
 }
 
 
 .clear {
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightRain2.jpg');
+    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/clear.jpg');
 }
 
 
 .default {
-    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/lightRain2.jpg');
+    background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('../../assets/.default.jpg');
 }
 
