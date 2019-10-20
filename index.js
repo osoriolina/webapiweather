@@ -125,9 +125,6 @@ function temperaturaActual(ciudad) {
     let imprimeNombreCiudad = document.querySelector(".nombre__ciudad")
     imprimeNombreCiudad.innerHTML = ciudad["title"]
 
-   
-
-
 }
 
  // despues de saber la estructura de la ubicacione de mis objetos lo debo poner de nuevo al lado de barcelona = JSON.parse(texto);
@@ -139,6 +136,12 @@ function imprimir(texto){ //callback
   //temperaturaDias(ciudad)
 
 }
+
+
+
+// PRUEBA funcion para el boton /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 
 
 httpGet("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/753692/", imprimir)
