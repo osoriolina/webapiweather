@@ -1,9 +1,13 @@
-function httpGet(theUrl, callback) {
+const button = document.getElementById('nextButton');
 
+function httpGet(theUrl, callback, dia) {
+  button.innerHTML = 'Cargando'
   let xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = function () {
-      if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-          callback(xmlHttp.responseText);
+      if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+          callback(xmlHttp.responseText, dia);
+        } 
+        button.innerHTML = 'Mañana';
   }
   xmlHttp.open("GET", theUrl);
 
@@ -84,8 +88,8 @@ function temperaturaActual(ciudad) {
   console.log("HOY " + objTemperaturaDia["the_temp"])
 } */
 
-function temperaturaActual(ciudad) {
-    let objTemperaturaDia = ciudad["consolidated_weather"][0]
+function temperaturaActual(ciudad, index = 0) {
+    let objTemperaturaDia = ciudad["consolidated_weather"][index]
   
   // imprime el numero de la temperatura GRANDE
     let imprimeTemperatura = document.querySelector("#result .temperatura")
@@ -129,10 +133,9 @@ function temperaturaActual(ciudad) {
 
  // despues de saber la estructura de la ubicacione de mis objetos lo debo poner de nuevo al lado de barcelona = JSON.parse(texto);
 
-function imprimir(texto){ //callback
+function imprimir(texto, dia){ //callback
   let ciudad = JSON.parse(texto);
-
-  temperaturaActual(ciudad)
+  temperaturaActual(ciudad, dia)
   //temperaturaDias(ciudad)
 
 }
@@ -142,6 +145,10 @@ function imprimir(texto){ //callback
 // PRUEBA funcion para el boton /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+
+button.addEventListener('click', function() {
+  httpGet("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/753692/", imprimir, 1)
+});
 
 
 httpGet("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/753692/", imprimir)
